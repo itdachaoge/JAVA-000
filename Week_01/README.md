@@ -8,6 +8,15 @@
 		
 		
 ### 2.  展示 Xmx、Xms、Xmn、Meta、DirectMemory、Xss 这些内存参数的关系
-  * 标签：数组、哈希表
-  * 解法1：
-        * 暴力破解，两重循环进行遍历
+  * 内存参数含义说明：
+        * -Xmx 堆最大内存
+        * -Xms 堆初始内存
+        * -Xmn: 年轻代大小（eden区+2 survivor）
+        * -Xss：每个线程的堆栈大小，默认1M
+        * \- metaspace(堆内) JDK8使用metaspace来替代了permsize:永久代大小
+        * -XX:MaxDirectMemorySize 设置最大堆外内存，默认是-xmx-survivor，也就是基本上和-xmx大小相等
+        * DirectMemory ： 直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是Java虚拟机规范中定义的内存区域,也可能导致OutOfMemoryError 异常出现
+  * 内存参数关系图
+  * 参考文献
+        * https://www.cnblogs.com/straybirds/p/8496150.html
+        * https://www.cnblogs.com/duanxz/p/6089421.html
