@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--把对象的创建交给spring来管理-->
+
+    <bean id="school" class="com.geek.spring.homework.school_xml.School">
+       <property name="klasses">
+           <list>
+               <ref bean="klass"></ref>
+
+           </list>
+       </property>
+    </bean>
+
+    <bean id="klass" class="com.geek.spring.homework.school_xml.Klass">
+        <property name="students">
+            <list>
+                <ref bean="student1"></ref>
+                <ref bean="student2"></ref>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="student1" class="com.geek.spring.homework.school_xml.Student">
+        <property name="id" value="1" />
+        <property name="name" value="zhangycl" />
+    </bean>
+
+    <bean id="student2" class="com.geek.spring.homework.school_xml.Student">
+        <property name="id" value="2" />
+        <property name="name" value="zhangycl2" />
+    </bean>
+</beans>

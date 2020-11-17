@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.geek.spring.homework.auto_starter.SchoolAutoConfiguration,\
+  com.geek.spring.homework.auto_starter.user.UserAutoConfiguration
